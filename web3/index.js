@@ -82,7 +82,6 @@ async function connect() {
     // },
     walletconnect: {
       package: window.WalletConnectProvider.default,
-      /*
       options: {
         infuraId: "0a5f720ee09a409cbbbc4d9bb3d549be",
         network: "binance", // here
@@ -94,7 +93,7 @@ async function connect() {
           mobileLinks: ["metamask", "trust"],
         },
       },
-      */
+      /*
       options: {
         infuraId: "0a5f720ee09a409cbbbc4d9bb3d549be",
         network: "binance-testnet", // here
@@ -106,6 +105,7 @@ async function connect() {
           mobileLinks: ["metamask", "trust"],
         },
       },
+      */
     },
   };
 
