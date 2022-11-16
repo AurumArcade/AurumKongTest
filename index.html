@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Super AuruMan</title>
+    <title>Unity WebGL Player | Aurum Kong</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
-  <body>
+  <body style="background-color: #454545">
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <canvas id="unity-canvas" width=1400 height=875></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -20,9 +20,10 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Super AuruMan</div>
+        <div id="unity-build-title">Aurum Kong</div>
       </div>
     </div>
+    <script src="web3/index.js"></script>
     <script>
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
@@ -56,15 +57,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/SuperAuruman_UnityBuild.loader.js";
+      var loaderUrl = buildUrl + "/AurumKong_UnityBuild.loader.js";
       var config = {
-        dataUrl: buildUrl + "/a1a99900967e76d2fb6a106b084e41c2.data",
-        frameworkUrl: buildUrl + "/ce0638336cc01e3ef727d8bdb3de0517.js",
-        codeUrl: buildUrl + "/7b1d15e082a81f629187cbdc6402ee88.wasm",
+        dataUrl: buildUrl + "/AurumKong_UnityBuild.data",
+        frameworkUrl: buildUrl + "/AurumKong_UnityBuild.framework.js",
+        codeUrl: buildUrl + "/AurumKong_UnityBuild.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "The Banzai Institute",
-        productName: "Super AuruMan",
-        productVersion: "1.0.1.1",
+        companyName: "Aurum",
+        productName: "Aurum Kong",
+        productVersion: "1.8.1.2",
         showBanner: unityShowBanner,
       };
 
@@ -86,23 +87,22 @@
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
+        //config.devicePixelRatio = 1;
 
         canvas.style.width = window.innerWidth + 'px';
         canvas.style.height = window.innerHeight + 'px';
-
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "1400px";
+        canvas.style.height = "875px";
       }
-
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
+	  
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
